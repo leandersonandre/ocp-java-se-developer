@@ -1,3 +1,14 @@
+Identifiers declarations
+```java
+
+# invalid
+_
+a.b
+true
+1_s
+a!
+```
+
 Var declarations
 ```java
 # invalid
@@ -20,4 +31,20 @@ var i = _31;
 var i = 31_;
 var i = 31_.01;
 var i = 31._01;
+```
+
+Block text declarations
+```java
+# valid
+var i = 0;
+		var text = """
+				bla"" + i + 
+				""";
+# quotes "" are automatically escaped.
+# The substring + i + is a text, this is not a use of the variable i.
+
+var text = """
+				bla\nbla
+				""";
+# There is a line break.
 ```
