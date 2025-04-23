@@ -37,14 +37,31 @@ Block text declarations
 ```java
 # valid
 var i = 0;
-		var text = """
-				bla"" + i + 
-				""";
+var text = """
+	bla"" + i + 
+	""";
 # quotes "" are automatically escaped.
 # The substring + i + is a text, this is not a use of the variable i.
 
 var text = """
-				bla\nbla
-				""";
+	bla\nbla
+	""";
 # There is a line break.
+
+var text = """
+	first \s
+	second \
+	third
+        """;
+# the \ means dont break line.
+# \s means keep the previous whitespaces
+```
+
+Short/byte automatic casting in operations
+```java
+# Compile error, short casting automatically to int
+short i = 10;
+short b = 10;
+short c = i + b;
+
 ```
